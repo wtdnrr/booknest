@@ -1,0 +1,36 @@
+[2025-04-07T10:46:20.382+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-07T10:46:14.869430+00:00 [queued]>
+[2025-04-07T10:46:20.391+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-07T10:46:14.869430+00:00 [queued]>
+[2025-04-07T10:46:20.392+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-07T10:46:20.405+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): build_matrix> on 2025-04-07 10:46:14.869430+00:00
+[2025-04-07T10:46:20.412+0000] {standard_task_runner.py:60} INFO - Started process 3931 to run task
+[2025-04-07T10:46:20.416+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'build_matrix', 'manual__2025-04-07T10:46:14.869430+00:00', '--job-id', '542', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmp3_zdbbu5']
+[2025-04-07T10:46:20.417+0000] {standard_task_runner.py:88} INFO - Job 542: Subtask build_matrix
+[2025-04-07T10:46:20.460+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.build_matrix manual__2025-04-07T10:46:14.869430+00:00 [running]> on host c6a1082d0e89
+[2025-04-07T10:46:20.530+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='build_matrix' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T10:46:14.869430+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T10:46:14.869430+00:00'
+[2025-04-07T10:46:20.532+0000] {logging_mixin.py:188} INFO - [build_matrix] 데이터 로딩 중...
+[2025-04-07T10:46:20.564+0000] {logging_mixin.py:188} INFO - [build_matrix] 피처 전처리 중...
+[2025-04-07T10:46:20.585+0000] {logging_mixin.py:188} INFO - testsetse
+[2025-04-07T10:46:20.586+0000] {logging_mixin.py:188} INFO - [build_matrix] 행렬 및 매핑 생성 중...
+[2025-04-07T10:46:20.593+0000] {logging_mixin.py:188} INFO - [matrix_builder] 상호작용 수: 952
+[2025-04-07T10:46:20.594+0000] {logging_mixin.py:188} INFO - (2000, 5)
+[2025-04-07T10:46:20.620+0000] {logging_mixin.py:188} INFO -    book_id  ...                                       feature_list
+0     6225  ...   [tag:공포, tag:긴장감 있는, tag:미스터리, tag:스릴러, tag:어두운]
+1     6226  ...  [category:국내도서, category:사회 정치, category:사회복지,...
+2     6227  ...  [tag:내면 탐구, tag:밝고 긍정적, tag:성장 이야기, tag:정체성 탐색...
+3     6228  ...  [tag:사회 비판적, tag:의료 및 바이오테크, tag:정체성 탐색, tag:철학적]
+4     6229  ...  [tag:드라마, tag:사회 비판적, tag:역사소설, tag:잔잔한, tag:철학적]
+
+[5 rows x 5 columns]
+[2025-04-07T10:46:20.621+0000] {logging_mixin.py:188} INFO - (2000, 5)
+[2025-04-07T10:46:20.621+0000] {logging_mixin.py:188} INFO - 진입1
+[2025-04-07T10:46:20.626+0000] {logging_mixin.py:188} INFO -    user_id  book_id             timestamp    action_type  score
+0        2     1106  2025-04-10T09:27:00Z  rating_star_3   0.10
+1        4      958  2025-04-10T14:44:00Z  review_star_2  -0.15
+2        1     1466  2025-04-06T23:25:00Z  rating_star_2  -0.15
+3        1      112  2025-04-10T14:35:00Z  rating_star_1  -0.25
+4        1      644  2025-04-11T18:41:00Z  click_dislike  -0.50
+[2025-04-07T10:46:20.627+0000] {logging_mixin.py:188} INFO - 진입2
+[2025-04-07T10:46:20.628+0000] {logging_mixin.py:188} INFO - [matrix_builder] 오류: Item id 1106 not in item id mapping. Make sure you call the fit method.
+[2025-04-07T10:46:20.628+0000] {logging_mixin.py:188} INFO - [build_matrix] 오류 발생: not enough values to unpack (expected 6, got 0)
+[2025-04-07T10:46:20.670+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-07T10:46:20.688+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

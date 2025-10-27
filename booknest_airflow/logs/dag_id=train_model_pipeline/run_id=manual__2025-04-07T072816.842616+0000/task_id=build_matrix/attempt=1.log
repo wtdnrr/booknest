@@ -1,0 +1,42 @@
+[2025-04-07T07:28:21.595+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-07T07:28:16.842616+00:00 [queued]>
+[2025-04-07T07:28:21.601+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-07T07:28:16.842616+00:00 [queued]>
+[2025-04-07T07:28:21.601+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-07T07:28:21.611+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): build_matrix> on 2025-04-07 07:28:16.842616+00:00
+[2025-04-07T07:28:21.618+0000] {standard_task_runner.py:60} INFO - Started process 1496 to run task
+[2025-04-07T07:28:21.620+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'build_matrix', 'manual__2025-04-07T07:28:16.842616+00:00', '--job-id', '508', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmps8xa4bym']
+[2025-04-07T07:28:21.622+0000] {standard_task_runner.py:88} INFO - Job 508: Subtask build_matrix
+[2025-04-07T07:28:21.665+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.build_matrix manual__2025-04-07T07:28:16.842616+00:00 [running]> on host c6a1082d0e89
+[2025-04-07T07:28:21.724+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='build_matrix' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T07:28:16.842616+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T07:28:16.842616+00:00'
+[2025-04-07T07:28:21.726+0000] {logging_mixin.py:188} INFO - [build_matrix] 데이터 로딩 중...
+[2025-04-07T07:28:21.756+0000] {logging_mixin.py:188} INFO - [build_matrix] 피처 전처리 중...
+[2025-04-07T07:28:21.768+0000] {logging_mixin.py:188} INFO - (1000, 4)
+[2025-04-07T07:28:21.769+0000] {logging_mixin.py:188} INFO - 0     6
+1    11
+2     8
+3     8
+4     9
+Name: user_id, dtype: int64
+[2025-04-07T07:28:21.770+0000] {logging_mixin.py:188} INFO - 0    3850
+1    8739
+2    5102
+3    4395
+4    3122
+Name: book_id, dtype: int64
+[2025-04-07T07:28:21.770+0000] {logging_mixin.py:188} INFO - 0    2025-04-05T13:00:00Z
+1    2025-04-05T13:00:01Z
+2    2025-04-05T13:00:02Z
+3    2025-04-05T13:00:03Z
+4    2025-04-05T13:00:04Z
+Name: timestamp, dtype: object
+[2025-04-07T07:28:21.771+0000] {logging_mixin.py:188} INFO - 0       select_tag
+1    rating_star_5
+2       select_tag
+3    rating_star_1
+4    review_star_5
+Name: action_type, dtype: object
+[2025-04-07T07:28:21.771+0000] {logging_mixin.py:188} INFO - [build_matrix] 행렬 및 매핑 생성 중...
+[2025-04-07T07:28:21.777+0000] {logging_mixin.py:188} INFO - [matrix_builder] 상호작용 수: 940
+[2025-04-07T07:28:21.780+0000] {logging_mixin.py:188} INFO - [matrix_builder] 오류: Item id 3850 not in item id mapping. Make sure you call the fit method.
+[2025-04-07T07:28:21.780+0000] {logging_mixin.py:188} INFO - [build_matrix] 오류 발생: not enough values to unpack (expected 6, got 0)
+[2025-04-07T07:28:21.793+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-07T07:28:21.811+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

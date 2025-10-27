@@ -1,0 +1,20 @@
+[2025-04-03T05:53:22.121+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-03T05:53:18.382987+00:00 [queued]>
+[2025-04-03T05:53:22.126+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-03T05:53:18.382987+00:00 [queued]>
+[2025-04-03T05:53:22.127+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-03T05:53:22.137+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): build_matrix> on 2025-04-03 05:53:18.382987+00:00
+[2025-04-03T05:53:22.144+0000] {standard_task_runner.py:60} INFO - Started process 634 to run task
+[2025-04-03T05:53:22.146+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'build_matrix', 'manual__2025-04-03T05:53:18.382987+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmp9uxax2td']
+[2025-04-03T05:53:22.148+0000] {standard_task_runner.py:88} INFO - Job 260: Subtask build_matrix
+[2025-04-03T05:53:22.187+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.build_matrix manual__2025-04-03T05:53:18.382987+00:00 [running]> on host b3cf11128f5a
+[2025-04-03T05:53:22.246+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='build_matrix' AIRFLOW_CTX_EXECUTION_DATE='2025-04-03T05:53:18.382987+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-03T05:53:18.382987+00:00'
+[2025-04-03T05:53:22.248+0000] {logging_mixin.py:188} INFO - [build_matrix] 데이터 로딩 중...
+[2025-04-03T05:53:22.287+0000] {logging_mixin.py:188} INFO - [build_matrix] 피처 전처리 중...
+[2025-04-03T05:53:22.290+0000] {logging_mixin.py:188} INFO - [build_matrix] 행렬 및 매핑 생성 중...
+[2025-04-03T05:53:22.292+0000] {logging_mixin.py:188} INFO - [matrix_builder] 상호작용 수: 3
+[2025-04-03T05:53:22.296+0000] {logging_mixin.py:188} INFO - [build_matrix] 저장 완료: data/processed/matrix.pkl
+[2025-04-03T05:53:22.431+0000] {logging_mixin.py:188} INFO - [s3_utils] S3 업로드 완료 → s3://saffybooknest/matrix/lightfm/matrix_lightfm_20250403.pkl
+[2025-04-03T05:53:22.431+0000] {logging_mixin.py:188} INFO - [build_matrix] S3 업로드 완료
+[2025-04-03T05:53:22.432+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-03T05:53:22.439+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=train_model_pipeline, task_id=build_matrix, execution_date=20250403T055318, start_date=20250403T055322, end_date=20250403T055322
+[2025-04-03T05:53:22.481+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-03T05:53:22.497+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

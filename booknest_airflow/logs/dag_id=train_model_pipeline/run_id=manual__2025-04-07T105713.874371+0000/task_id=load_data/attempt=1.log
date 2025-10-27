@@ -1,0 +1,27 @@
+[2025-04-07T10:57:15.734+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.load_data manual__2025-04-07T10:57:13.874371+00:00 [queued]>
+[2025-04-07T10:57:15.748+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.load_data manual__2025-04-07T10:57:13.874371+00:00 [queued]>
+[2025-04-07T10:57:15.749+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-07T10:57:15.777+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_data> on 2025-04-07 10:57:13.874371+00:00
+[2025-04-07T10:57:15.787+0000] {standard_task_runner.py:60} INFO - Started process 4196 to run task
+[2025-04-07T10:57:15.791+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'load_data', 'manual__2025-04-07T10:57:13.874371+00:00', '--job-id', '547', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmpdqyi8owf']
+[2025-04-07T10:57:15.793+0000] {standard_task_runner.py:88} INFO - Job 547: Subtask load_data
+[2025-04-07T10:57:15.843+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.load_data manual__2025-04-07T10:57:13.874371+00:00 [running]> on host c6a1082d0e89
+[2025-04-07T10:57:15.912+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T10:57:13.874371+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T10:57:13.874371+00:00'
+[2025-04-07T10:57:15.914+0000] {logging_mixin.py:188} INFO - [load_data] DB 연결 중...
+[2025-04-07T10:57:15.925+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-07T10:57:16.237+0000] {logging_mixin.py:188} INFO - [s3_utils] S3 연결 성공
+[2025-04-07T10:57:16.238+0000] {logging_mixin.py:188} INFO - [load_data] 저장 경로(data/raw) 확인 완료
+[2025-04-07T10:57:16.238+0000] {logging_mixin.py:188} INFO - [load_data] 도서 정보 쿼리 실행 중...
+[2025-04-07T10:57:16.239+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-07T10:57:16.976+0000] {logging_mixin.py:188} INFO - [load_data] 도서 정보 2000건 로드 완료
+[2025-04-07T10:57:16.977+0000] {logging_mixin.py:188} INFO - [load_data] 유저 정보 쿼리 실행 중...
+[2025-04-07T10:57:16.978+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-07T10:57:17.199+0000] {logging_mixin.py:188} INFO - [load_data] 유저 정보 7건 로드 완료
+[2025-04-07T10:57:17.200+0000] {logging_mixin.py:188} INFO - [load_data] 로그 데이터 다운로드 중...
+[2025-04-07T10:57:17.566+0000] {logging_mixin.py:188} INFO - [load_data] 로그 데이터 1000건 로드 완료
+[2025-04-07T10:57:17.567+0000] {logging_mixin.py:188} INFO - [load_data] 파일 저장 중...
+[2025-04-07T10:57:17.594+0000] {logging_mixin.py:188} INFO - [load_data] 저장 완료
+[2025-04-07T10:57:17.596+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-07T10:57:17.605+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=train_model_pipeline, task_id=load_data, execution_date=20250407T105713, start_date=20250407T105715, end_date=20250407T105717
+[2025-04-07T10:57:17.652+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-07T10:57:17.679+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

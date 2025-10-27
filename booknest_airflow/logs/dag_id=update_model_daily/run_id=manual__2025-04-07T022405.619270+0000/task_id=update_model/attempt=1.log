@@ -1,0 +1,38 @@
+[2025-04-07T02:24:07.251+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: update_model_daily.update_model manual__2025-04-07T02:24:05.619270+00:00 [queued]>
+[2025-04-07T02:24:07.257+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: update_model_daily.update_model manual__2025-04-07T02:24:05.619270+00:00 [queued]>
+[2025-04-07T02:24:07.257+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-07T02:24:07.266+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): update_model> on 2025-04-07 02:24:05.619270+00:00
+[2025-04-07T02:24:07.274+0000] {standard_task_runner.py:60} INFO - Started process 19423 to run task
+[2025-04-07T02:24:07.277+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'update_model_daily', 'update_model', 'manual__2025-04-07T02:24:05.619270+00:00', '--job-id', '451', '--raw', '--subdir', 'DAGS_FOLDER/update_model_dag.py', '--cfg-path', '/tmp/tmpfgnzozwo']
+[2025-04-07T02:24:07.278+0000] {standard_task_runner.py:88} INFO - Job 451: Subtask update_model
+[2025-04-07T02:24:07.318+0000] {task_command.py:423} INFO - Running <TaskInstance: update_model_daily.update_model manual__2025-04-07T02:24:05.619270+00:00 [running]> on host 280c0a538679
+[2025-04-07T02:24:07.559+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='update_model_daily' AIRFLOW_CTX_TASK_ID='update_model' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T02:24:05.619270+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T02:24:05.619270+00:00'
+[2025-04-07T02:24:07.560+0000] {logging_mixin.py:188} INFO - [update_model] S3에서 전날 matrix.pkl 다운로드 중...
+[2025-04-07T02:24:07.852+0000] {logging_mixin.py:188} INFO - [s3_utils] 다운로드 완료: matrix/lightfm/matrix_lightfm_20250407.pkl → data/processed/matrix_daily.pkl
+[2025-04-07T02:24:07.854+0000] {logging_mixin.py:188} INFO - [update_model] 기존 데이터 로딩 완료
+[2025-04-07T02:24:07.862+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-07T02:24:08.048+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-07T02:24:08.349+0000] {logging_mixin.py:188} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 11 entries, 0 to 10
+Data columns (total 1 columns):
+ #   Column  Non-Null Count  Dtype
+---  ------  --------------  -----
+ 0   id      11 non-null     int64
+dtypes: int64(1)
+memory usage: 216.0 bytes
+[2025-04-07T02:24:08.350+0000] {logging_mixin.py:188} INFO - None
+[2025-04-07T02:24:08.353+0000] {logging_mixin.py:188} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 4 columns):
+ #   Column    Non-Null Count  Dtype 
+---  ------    --------------  ----- 
+ 0   book_id   1000 non-null   int64 
+ 1   author    1000 non-null   object
+ 2   category  1000 non-null   object
+ 3   tag       882 non-null    object
+dtypes: int64(1), object(3)
+memory usage: 31.4+ KB
+[2025-04-07T02:24:08.354+0000] {logging_mixin.py:188} INFO - None
+[2025-04-07T02:24:08.355+0000] {logging_mixin.py:188} INFO - [update_model] 오류 발생: 'id'
+[2025-04-07T02:24:08.374+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-07T02:24:08.388+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

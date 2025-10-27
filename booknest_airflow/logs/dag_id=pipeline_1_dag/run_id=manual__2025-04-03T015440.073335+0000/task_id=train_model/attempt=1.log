@@ -1,0 +1,20 @@
+[2025-04-03T01:54:45.323+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_1_dag.train_model manual__2025-04-03T01:54:40.073335+00:00 [queued]>
+[2025-04-03T01:54:45.331+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_1_dag.train_model manual__2025-04-03T01:54:40.073335+00:00 [queued]>
+[2025-04-03T01:54:45.331+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-03T01:54:45.343+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): train_model> on 2025-04-03 01:54:40.073335+00:00
+[2025-04-03T01:54:45.350+0000] {standard_task_runner.py:60} INFO - Started process 2873 to run task
+[2025-04-03T01:54:45.352+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_1_dag', 'train_model', 'manual__2025-04-03T01:54:40.073335+00:00', '--job-id', '74', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_1_dag.py', '--cfg-path', '/tmp/tmpb0y14tb2']
+[2025-04-03T01:54:45.353+0000] {standard_task_runner.py:88} INFO - Job 74: Subtask train_model
+[2025-04-03T01:54:45.387+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_1_dag.train_model manual__2025-04-03T01:54:40.073335+00:00 [running]> on host ccc140473116
+[2025-04-03T01:54:45.442+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_1_dag' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-04-03T01:54:40.073335+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-03T01:54:40.073335+00:00'
+[2025-04-03T01:54:45.443+0000] {logging_mixin.py:188} INFO - [1] 학습용 행렬 로드 중...
+[2025-04-03T01:54:45.444+0000] {logging_mixin.py:188} INFO - [2] LightFM 모델 학습 중...
+[2025-04-03T01:54:45.447+0000] {logging_mixin.py:188} INFO - [3] Precision@5 평가 중...
+[2025-04-03T01:54:45.448+0000] {logging_mixin.py:188} INFO - Precision@5 = 0.2000
+[2025-04-03T01:54:45.449+0000] {logging_mixin.py:188} INFO - [4] 모델 저장 완료 → model/lightfm_model.pkl
+[2025-04-03T01:54:45.870+0000] {logging_mixin.py:188} INFO - S3 업로드 완료: s3://saffybooknest/model/lightfm/model_lightfm_20250403.pkl
+[2025-04-03T01:54:45.874+0000] {logging_mixin.py:188} INFO - [5] S3 저장 완료 -> model/lightfm/model_lightfm_20250403.pkl
+[2025-04-03T01:54:45.875+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-03T01:54:45.883+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=pipeline_1_dag, task_id=train_model, execution_date=20250403T015440, start_date=20250403T015445, end_date=20250403T015445
+[2025-04-03T01:54:45.928+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-03T01:54:45.941+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

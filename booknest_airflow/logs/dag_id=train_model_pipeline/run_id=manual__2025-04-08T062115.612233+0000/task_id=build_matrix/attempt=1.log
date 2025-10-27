@@ -1,0 +1,30 @@
+[2025-04-08T06:21:19.913+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-08T06:21:15.612233+00:00 [queued]>
+[2025-04-08T06:21:19.919+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-08T06:21:15.612233+00:00 [queued]>
+[2025-04-08T06:21:19.920+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-08T06:21:19.931+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): build_matrix> on 2025-04-08 06:21:15.612233+00:00
+[2025-04-08T06:21:19.940+0000] {standard_task_runner.py:60} INFO - Started process 13583 to run task
+[2025-04-08T06:21:19.942+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'build_matrix', 'manual__2025-04-08T06:21:15.612233+00:00', '--job-id', '596', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmptu25cti5']
+[2025-04-08T06:21:19.943+0000] {standard_task_runner.py:88} INFO - Job 596: Subtask build_matrix
+[2025-04-08T06:21:19.981+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.build_matrix manual__2025-04-08T06:21:15.612233+00:00 [running]> on host c6a1082d0e89
+[2025-04-08T06:21:20.039+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='booknest' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='build_matrix' AIRFLOW_CTX_EXECUTION_DATE='2025-04-08T06:21:15.612233+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-08T06:21:15.612233+00:00'
+[2025-04-08T06:21:20.041+0000] {logging_mixin.py:188} INFO - [build_matrix] 데이터 로딩 중...
+[2025-04-08T06:21:20.077+0000] {logging_mixin.py:188} INFO - [build_matrix] 피처 전처리 중...
+[2025-04-08T06:21:20.146+0000] {logging_mixin.py:188} INFO -    book_id  ...                                       feature_list
+0     6225  ...  [tag:공포, tag:긴장감 있는, tag:미스터리, tag:스릴러, tag:어두...
+1     6226  ...  [category:국내도서, category:사회 정치, category:사회복지,...
+2     6227  ...  [tag:내면 탐구, tag:밝고 긍정적, tag:성장 이야기, tag:정체성 탐색...
+3     6228  ...  [tag:사회 비판적, tag:의료 및 바이오테크, tag:정체성 탐색, tag:철...
+4     6229  ...  [tag:드라마, tag:사회 비판적, tag:역사소설, tag:잔잔한, tag:철...
+
+[5 rows x 5 columns]
+[2025-04-08T06:21:20.147+0000] {logging_mixin.py:188} INFO - [build_matrix] 행렬 생성 중...
+[2025-04-08T06:21:20.152+0000] {logging_mixin.py:188} INFO -    user_id
+0        1
+1        2
+2        3
+3        4
+4        5
+[2025-04-08T06:21:20.153+0000] {logging_mixin.py:188} INFO - [matrix_builder] 오류 발생: 'id'
+[2025-04-08T06:21:20.153+0000] {logging_mixin.py:188} INFO - [build_matrix] 오류 발생: 행렬 생성 실패
+[2025-04-08T06:21:20.196+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-08T06:21:20.215+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

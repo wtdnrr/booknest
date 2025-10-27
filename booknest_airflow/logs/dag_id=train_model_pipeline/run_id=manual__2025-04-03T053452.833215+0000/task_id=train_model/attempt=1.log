@@ -1,0 +1,16 @@
+[2025-04-03T05:35:00.861+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.train_model manual__2025-04-03T05:34:52.833215+00:00 [queued]>
+[2025-04-03T05:35:00.873+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.train_model manual__2025-04-03T05:34:52.833215+00:00 [queued]>
+[2025-04-03T05:35:00.874+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-03T05:35:00.890+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): train_model> on 2025-04-03 05:34:52.833215+00:00
+[2025-04-03T05:35:00.898+0000] {standard_task_runner.py:60} INFO - Started process 197 to run task
+[2025-04-03T05:35:00.901+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'train_model', 'manual__2025-04-03T05:34:52.833215+00:00', '--job-id', '250', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmpbp8e6_qz']
+[2025-04-03T05:35:00.902+0000] {standard_task_runner.py:88} INFO - Job 250: Subtask train_model
+[2025-04-03T05:35:00.945+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.train_model manual__2025-04-03T05:34:52.833215+00:00 [running]> on host b3cf11128f5a
+[2025-04-03T05:35:01.009+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-04-03T05:34:52.833215+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-03T05:34:52.833215+00:00'
+[2025-04-03T05:35:01.010+0000] {logging_mixin.py:188} INFO - [train_model] 학습용 데이터 로딩 중...
+[2025-04-03T05:35:01.011+0000] {logging_mixin.py:188} INFO - interactions type: <class 'str'>
+[2025-04-03T05:35:01.011+0000] {logging_mixin.py:188} INFO - weights type: <class 'str'>
+[2025-04-03T05:35:01.011+0000] {logging_mixin.py:188} INFO - item_features type: <class 'str'>
+[2025-04-03T05:35:01.012+0000] {logging_mixin.py:188} INFO - [train_model] 예외 발생: 'str' object has no attribute 'tocoo'
+[2025-04-03T05:35:01.034+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-03T05:35:01.048+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

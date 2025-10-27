@@ -1,0 +1,18 @@
+[2025-04-02T08:23:40.897+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_1_dag.train_model manual__2025-04-02T08:23:33.961740+00:00 [queued]>
+[2025-04-02T08:23:40.903+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_1_dag.train_model manual__2025-04-02T08:23:33.961740+00:00 [queued]>
+[2025-04-02T08:23:40.904+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-02T08:23:40.914+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): train_model> on 2025-04-02 08:23:33.961740+00:00
+[2025-04-02T08:23:40.920+0000] {standard_task_runner.py:60} INFO - Started process 251 to run task
+[2025-04-02T08:23:40.923+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_1_dag', 'train_model', 'manual__2025-04-02T08:23:33.961740+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_1_dag.py', '--cfg-path', '/tmp/tmp8247ri_d']
+[2025-04-02T08:23:40.924+0000] {standard_task_runner.py:88} INFO - Job 54: Subtask train_model
+[2025-04-02T08:23:40.962+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_1_dag.train_model manual__2025-04-02T08:23:33.961740+00:00 [running]> on host ccc140473116
+[2025-04-02T08:23:41.024+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_1_dag' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-04-02T08:23:33.961740+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-02T08:23:33.961740+00:00'
+[2025-04-02T08:23:41.026+0000] {logging_mixin.py:188} INFO - [1] 학습용 행렬 로드 중...
+[2025-04-02T08:23:41.027+0000] {logging_mixin.py:188} INFO - [2] LightFM 모델 학습 중...
+[2025-04-02T08:23:41.030+0000] {logging_mixin.py:188} INFO - [3] Precision@5 평가 중...
+[2025-04-02T08:23:41.032+0000] {logging_mixin.py:188} INFO - Precision@5 = 0.2000
+[2025-04-02T08:23:41.033+0000] {logging_mixin.py:188} INFO - [4] 모델 저장 완료 → model/lightfm_model.pkl
+[2025-04-02T08:23:41.944+0000] {logging_mixin.py:188} INFO - S3 업로드 실패: Failed to upload model/lightfm_model.pkl to booknest-recommender/model/lightfm_model.pkl: An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+[2025-04-02T08:23:41.945+0000] {logging_mixin.py:188} INFO - [에러 발생 - train_model] Failed to upload model/lightfm_model.pkl to booknest-recommender/model/lightfm_model.pkl: An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+[2025-04-02T08:23:41.981+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-02T08:23:41.994+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

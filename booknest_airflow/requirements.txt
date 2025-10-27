@@ -1,0 +1,7 @@
+pandas
+numpy
+lightfm
+sqlalchemy
+pymysql
+pyarrow
+boto3

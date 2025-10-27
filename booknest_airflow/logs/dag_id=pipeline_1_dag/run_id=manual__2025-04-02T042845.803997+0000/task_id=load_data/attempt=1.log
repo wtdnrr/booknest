@@ -1,0 +1,113 @@
+[2025-04-02T04:28:47.999+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_1_dag.load_data manual__2025-04-02T04:28:45.803997+00:00 [queued]>
+[2025-04-02T04:28:48.006+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_1_dag.load_data manual__2025-04-02T04:28:45.803997+00:00 [queued]>
+[2025-04-02T04:28:48.007+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-02T04:28:48.018+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_data> on 2025-04-02 04:28:45.803997+00:00
+[2025-04-02T04:28:48.026+0000] {standard_task_runner.py:60} INFO - Started process 200 to run task
+[2025-04-02T04:28:48.029+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_1_dag', 'load_data', 'manual__2025-04-02T04:28:45.803997+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_1_dag.py', '--cfg-path', '/tmp/tmph0ix0d6h']
+[2025-04-02T04:28:48.030+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask load_data
+[2025-04-02T04:28:48.075+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_1_dag.load_data manual__2025-04-02T04:28:45.803997+00:00 [running]> on host 70eb00e5d734
+[2025-04-02T04:28:48.154+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_1_dag' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-02T04:28:45.803997+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-02T04:28:45.803997+00:00'
+[2025-04-02T04:28:48.340+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'booknest.booktag' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/src/load_data.py", line 13, in run
+    book_df = pd.read_sql("""
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 663, in read_sql
+    return pandas_sql.read_query(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 1738, in read_query
+    result = self.execute(sql, params)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 1562, in execute
+    return self.con.exec_driver_sql(sql, *args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1770, in exec_driver_sql
+    return self._exec_driver_sql(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1674, in _exec_driver_sql
+    ret = self._execute_context(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'booknest.booktag' doesn't exist")
+[SQL: 
+        SELECT B.id AS book_id, A.name AS author,
+               GROUP_CONCAT(DISTINCT C.name) AS category,
+               GROUP_CONCAT(DISTINCT T.name) AS tag
+        FROM book B
+        LEFT JOIN book_author BA ON B.id = BA.book_id
+        LEFT JOIN author A ON BA.author_id = A.id
+        LEFT JOIN book_category BC ON B.id = BC.book_id
+        LEFT JOIN category C ON BC.category_id = C.id
+        LEFT JOIN booktag BT ON B.id = BT.book_id
+        LEFT JOIN tag T ON BT.tag_id = T.id
+        GROUP BY B.id;
+    ]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2025-04-02T04:28:48.350+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=pipeline_1_dag, task_id=load_data, execution_date=20250402T042845, start_date=20250402T042847, end_date=20250402T042848
+[2025-04-02T04:28:48.361+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 5 for task load_data ((pymysql.err.ProgrammingError) (1146, "Table 'booknest.booktag' doesn't exist")
+[SQL: 
+        SELECT B.id AS book_id, A.name AS author,
+               GROUP_CONCAT(DISTINCT C.name) AS category,
+               GROUP_CONCAT(DISTINCT T.name) AS tag
+        FROM book B
+        LEFT JOIN book_author BA ON B.id = BA.book_id
+        LEFT JOIN author A ON BA.author_id = A.id
+        LEFT JOIN book_category BC ON B.id = BC.book_id
+        LEFT JOIN category C ON BC.category_id = C.id
+        LEFT JOIN booktag BT ON B.id = BT.book_id
+        LEFT JOIN tag T ON BT.tag_id = T.id
+        GROUP BY B.id;
+    ]
+(Background on this error at: https://sqlalche.me/e/14/f405); 200)
+[2025-04-02T04:28:48.402+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-02T04:28:48.421+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,28 @@
+[2025-04-02T04:42:38.253+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_1_dag.build_matrix manual__2025-04-02T04:42:33.931119+00:00 [queued]>
+[2025-04-02T04:42:38.264+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_1_dag.build_matrix manual__2025-04-02T04:42:33.931119+00:00 [queued]>
+[2025-04-02T04:42:38.264+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-02T04:42:38.279+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): build_matrix> on 2025-04-02 04:42:33.931119+00:00
+[2025-04-02T04:42:38.287+0000] {standard_task_runner.py:60} INFO - Started process 438 to run task
+[2025-04-02T04:42:38.290+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_1_dag', 'build_matrix', 'manual__2025-04-02T04:42:33.931119+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_1_dag.py', '--cfg-path', '/tmp/tmpls3az_v9']
+[2025-04-02T04:42:38.292+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask build_matrix
+[2025-04-02T04:42:38.336+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_1_dag.build_matrix manual__2025-04-02T04:42:33.931119+00:00 [running]> on host 70eb00e5d734
+[2025-04-02T04:42:38.400+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_1_dag' AIRFLOW_CTX_TASK_ID='build_matrix' AIRFLOW_CTX_EXECUTION_DATE='2025-04-02T04:42:33.931119+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-02T04:42:33.931119+00:00'
+[2025-04-02T04:42:38.460+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/src/build_matrix.py", line 59, in run
+    interactions, weights = dataset.build_interactions(interactions_source)
+  File "/home/airflow/.local/lib/python3.8/site-packages/lightfm/data.py", line 325, in build_interactions
+    user_idx, item_idx, weight = self._unpack_datum(datum)
+  File "/home/airflow/.local/lib/python3.8/site-packages/lightfm/data.py", line 282, in _unpack_datum
+    raise ValueError(
+ValueError: Item id 101 not in item id mapping. Make sure you call the fit method.
+[2025-04-02T04:42:38.470+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=pipeline_1_dag, task_id=build_matrix, execution_date=20250402T044233, start_date=20250402T044238, end_date=20250402T044238
+[2025-04-02T04:42:38.486+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 7 for task build_matrix (Item id 101 not in item id mapping. Make sure you call the fit method.; 438)
+[2025-04-02T04:42:38.503+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-02T04:42:38.524+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

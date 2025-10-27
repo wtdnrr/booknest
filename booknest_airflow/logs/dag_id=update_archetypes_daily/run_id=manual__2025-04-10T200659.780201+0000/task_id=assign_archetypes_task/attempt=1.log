@@ -1,0 +1,35 @@
+[2025-04-10T20:07:01.012+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: update_archetypes_daily.assign_archetypes_task manual__2025-04-10T20:06:59.780201+00:00 [queued]>
+[2025-04-10T20:07:01.018+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: update_archetypes_daily.assign_archetypes_task manual__2025-04-10T20:06:59.780201+00:00 [queued]>
+[2025-04-10T20:07:01.019+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-04-10T20:07:01.031+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): assign_archetypes_task> on 2025-04-10 20:06:59.780201+00:00
+[2025-04-10T20:07:01.037+0000] {standard_task_runner.py:60} INFO - Started process 15040 to run task
+[2025-04-10T20:07:01.039+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'update_archetypes_daily', 'assign_archetypes_task', 'manual__2025-04-10T20:06:59.780201+00:00', '--job-id', '689', '--raw', '--subdir', 'DAGS_FOLDER/update_archetype_daily.py', '--cfg-path', '/tmp/tmp2m3epyc8']
+[2025-04-10T20:07:01.042+0000] {standard_task_runner.py:88} INFO - Job 689: Subtask assign_archetypes_task
+[2025-04-10T20:07:01.081+0000] {task_command.py:423} INFO - Running <TaskInstance: update_archetypes_daily.assign_archetypes_task manual__2025-04-10T20:06:59.780201+00:00 [running]> on host 7ec5ad01cd28
+[2025-04-10T20:07:01.141+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='booknest' AIRFLOW_CTX_DAG_ID='update_archetypes_daily' AIRFLOW_CTX_TASK_ID='assign_archetypes_task' AIRFLOW_CTX_EXECUTION_DATE='2025-04-10T20:06:59.780201+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-10T20:06:59.780201+00:00'
+[2025-04-10T20:07:01.152+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-10T20:07:01.476+0000] {logging_mixin.py:188} INFO - 
+ User ID: 7
+[2025-04-10T20:07:01.477+0000] {logging_mixin.py:188} INFO -  Books in Nest: [(99739, '소년이 온다'), (1338, '괴물'), (74032, '데미안')]
+[2025-04-10T20:07:01.477+0000] {logging_mixin.py:188} INFO -  Tags: ['긴장감 있는', '철학적', '잔잔한', '불평등', '판타지', '감동적인', '드라마', '사회 비판적', '성장 이야기', '우정과 동료애', '내면 탐구', '정체성 탐색', '전쟁과 평화', '금기와 반항', '욕망과 타락']
+[2025-04-10T20:07:01.477+0000] {logging_mixin.py:188} INFO - 흰 오목눈이
+[2025-04-10T20:07:01.588+0000] {logging_mixin.py:188} INFO - 
+ User ID: 10
+[2025-04-10T20:07:01.588+0000] {logging_mixin.py:188} INFO -  Books in Nest: [(90539, '속 이 멋진 세계에 폭염을!'), (113755, '이 멋진 세계에 축복을!')]
+[2025-04-10T20:07:01.589+0000] {logging_mixin.py:188} INFO -  Tags: ['모험', '역동적인', '우정과 동료애', '코미디', '복수와 정의', '이세계']
+[2025-04-10T20:07:01.589+0000] {logging_mixin.py:188} INFO - 알바트로스
+[2025-04-10T20:07:01.726+0000] {logging_mixin.py:188} INFO - 
+ User ID: 13
+[2025-04-10T20:07:01.727+0000] {logging_mixin.py:188} INFO -  Books in Nest: [(85887, '물고기는 존재하지 않는다'), (80400, '21세기를 위한 21가지 제언'), (68352, '경계선'), (89658, '어느 독일인 이야기'), (67628, '미신의 연대기'), (68970, '피로사회'), (10588, '환상의 빛'), (3770, '금수'), (70104, '반딧불 강')]
+[2025-04-10T20:07:01.727+0000] {logging_mixin.py:188} INFO -  Tags: ['의식의 흐름', '역설적인', '역사소설', '불안감을 조성하는', '황홀한', '사회 비판적', '철학적', '인공지능과 정보화', '환경과 생태', '판타지', '젠더 문제', '몽환적인', '내면 탐구', '권력과 부패', '전쟁과 평화', '성장 이야기', '잔잔한', '우울한', '긴장감 있는', '잔혹한', '감동적인', '드라마', '복수와 정의', '기억과 시간']
+[2025-04-10T20:07:01.728+0000] {logging_mixin.py:188} INFO - 독수리
+[2025-04-10T20:07:01.806+0000] {logging_mixin.py:188} INFO - 
+ User ID: 14
+[2025-04-10T20:07:01.807+0000] {logging_mixin.py:188} INFO -  Books in Nest: [(67875, '새의 선물'), (901, '달의 제단')]
+[2025-04-10T20:07:01.807+0000] {logging_mixin.py:188} INFO -  Tags: ['내면 탐구', '성장 이야기', '드라마', '사회 비판적', '철학적', '긴장감 있는', '전통과 혁신', '기억과 시간', '우울한']
+[2025-04-10T20:07:01.808+0000] {logging_mixin.py:188} INFO - 플라밍고
+[2025-04-10T20:07:01.886+0000] {logging_mixin.py:188} INFO -  모든 유저의 아키타입이 성공적으로 업데이트되었습니다.
+[2025-04-10T20:07:01.895+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-10T20:07:01.902+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=update_archetypes_daily, task_id=assign_archetypes_task, execution_date=20250410T200659, start_date=20250410T200701, end_date=20250410T200701
+[2025-04-10T20:07:01.935+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-10T20:07:01.949+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

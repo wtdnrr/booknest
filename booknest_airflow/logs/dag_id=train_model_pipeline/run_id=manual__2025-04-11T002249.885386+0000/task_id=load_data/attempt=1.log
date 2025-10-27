@@ -1,0 +1,35 @@
+[2025-04-11T00:22:52.112+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.load_data manual__2025-04-11T00:22:49.885386+00:00 [queued]>
+[2025-04-11T00:22:52.119+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.load_data manual__2025-04-11T00:22:49.885386+00:00 [queued]>
+[2025-04-11T00:22:52.120+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-11T00:22:52.135+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_data> on 2025-04-11 00:22:49.885386+00:00
+[2025-04-11T00:22:52.145+0000] {standard_task_runner.py:60} INFO - Started process 16452 to run task
+[2025-04-11T00:22:52.149+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'load_data', 'manual__2025-04-11T00:22:49.885386+00:00', '--job-id', '703', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmpbd0uqi29']
+[2025-04-11T00:22:52.150+0000] {standard_task_runner.py:88} INFO - Job 703: Subtask load_data
+[2025-04-11T00:22:52.208+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.load_data manual__2025-04-11T00:22:49.885386+00:00 [running]> on host 7ec5ad01cd28
+[2025-04-11T00:22:52.289+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='booknest' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-11T00:22:49.885386+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-11T00:22:49.885386+00:00'
+[2025-04-11T00:22:52.290+0000] {logging_mixin.py:188} INFO - [load_data] DB 연결 중...
+[2025-04-11T00:22:52.301+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-11T00:22:52.301+0000] {logging_mixin.py:188} INFO - [load_data] 저장 경로(data/raw) 확인 완료
+[2025-04-11T00:22:52.302+0000] {logging_mixin.py:188} INFO - [load_data] 도서 정보 로딩 중...
+[2025-04-11T00:22:52.303+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-11T00:22:52.304+0000] {logging_mixin.py:188} INFO - [load_book_df] 도서 데이터 쿼리 실행 중...
+[2025-04-11T00:23:23.173+0000] {logging_mixin.py:188} INFO - [load_book_df] 111923건 로드 완료
+[2025-04-11T00:23:23.173+0000] {logging_mixin.py:188} INFO - [load_data] 도서 정보 111923건 로드 완료
+[2025-04-11T00:23:23.174+0000] {logging_mixin.py:188} INFO - [load_data] 유저 정보 로딩 중...
+[2025-04-11T00:23:23.175+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-11T00:23:23.175+0000] {logging_mixin.py:188} INFO - [load_user_df] 유저 데이터 쿼리 실행 중...
+[2025-04-11T00:23:23.367+0000] {logging_mixin.py:188} INFO - [load_user_df] 23건 로드 완료
+[2025-04-11T00:23:23.368+0000] {logging_mixin.py:188} INFO - [load_data] 유저 정보 23건 로드 완료
+[2025-04-11T00:23:23.369+0000] {logging_mixin.py:188} INFO - [load_data] 로그 S3 다운로드 중 → logs/250411/logs_250411.csv
+[2025-04-11T00:23:23.602+0000] {logging_mixin.py:188} INFO - [s3_utils] S3 연결 성공
+[2025-04-11T00:23:23.814+0000] {logging_mixin.py:188} INFO - [s3_utils] 다운로드 완료: logs/250411/logs_250411.csv → data/raw/logs_250411.csv
+[2025-04-11T00:23:23.825+0000] {logging_mixin.py:188} INFO - [s3_utils] CSV 로드 완료: 2000 rows from data/raw/logs_250411.csv
+[2025-04-11T00:23:23.825+0000] {logging_mixin.py:188} INFO - [load_data] 파일 저장 중...
+[2025-04-11T00:23:23.963+0000] {logging_mixin.py:188} INFO - [save_book_df] Saved to data/raw/book_df.parquet
+[2025-04-11T00:23:23.965+0000] {logging_mixin.py:188} INFO - [save_user_df] Saved to data/raw/user_df.parquet
+[2025-04-11T00:23:23.968+0000] {logging_mixin.py:188} INFO - [save_log_df] Saved to data/raw/log_df.parquet
+[2025-04-11T00:23:23.968+0000] {logging_mixin.py:188} INFO - [load_data] 저장 완료
+[2025-04-11T00:23:23.980+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-11T00:23:23.990+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=train_model_pipeline, task_id=load_data, execution_date=20250411T002249, start_date=20250411T002252, end_date=20250411T002323
+[2025-04-11T00:23:24.059+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-11T00:23:24.089+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

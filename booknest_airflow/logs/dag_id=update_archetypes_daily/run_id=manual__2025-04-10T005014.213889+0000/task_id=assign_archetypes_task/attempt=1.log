@@ -1,0 +1,30 @@
+[2025-04-10T00:51:47.580+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: update_archetypes_daily.assign_archetypes_task manual__2025-04-10T00:50:14.213889+00:00 [queued]>
+[2025-04-10T00:51:47.588+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: update_archetypes_daily.assign_archetypes_task manual__2025-04-10T00:50:14.213889+00:00 [queued]>
+[2025-04-10T00:51:47.589+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-04-10T00:51:47.604+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): assign_archetypes_task> on 2025-04-10 00:50:14.213889+00:00
+[2025-04-10T00:51:47.609+0000] {standard_task_runner.py:60} INFO - Started process 107 to run task
+[2025-04-10T00:51:47.612+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'update_archetypes_daily', 'assign_archetypes_task', 'manual__2025-04-10T00:50:14.213889+00:00', '--job-id', '666', '--raw', '--subdir', 'DAGS_FOLDER/update_archetype_daily.py', '--cfg-path', '/tmp/tmpv4642pj8']
+[2025-04-10T00:51:47.615+0000] {standard_task_runner.py:88} INFO - Job 666: Subtask assign_archetypes_task
+[2025-04-10T00:51:47.660+0000] {task_command.py:423} INFO - Running <TaskInstance: update_archetypes_daily.assign_archetypes_task manual__2025-04-10T00:50:14.213889+00:00 [running]> on host c6a1082d0e89
+[2025-04-10T00:51:47.765+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='booknest' AIRFLOW_CTX_DAG_ID='update_archetypes_daily' AIRFLOW_CTX_TASK_ID='assign_archetypes_task' AIRFLOW_CTX_EXECUTION_DATE='2025-04-10T00:50:14.213889+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-10T00:50:14.213889+00:00'
+[2025-04-10T00:51:47.782+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-10T00:51:47.995+0000] {logging_mixin.py:188} INFO - 
+ User ID: 1
+[2025-04-10T00:51:47.996+0000] {logging_mixin.py:188} INFO -  Books in Nest: [(36019, '이기적 유전자 The Selfish Gene'), (14217, '생명의 강'), (49758, '데일 카네기 인간관계론 (50만부 돌파 초판 무삭제 완역본)'), (63170, '스켈레톤 마스터 1'), (44430, '사피엔스'), (15345, '할머니의 정원')]
+[2025-04-10T00:51:47.997+0000] {logging_mixin.py:188} INFO -  Tags: ['철학적', '사회 비판적', '환경과 생태', '의료 및 바이오테크', '내면 탐구', '생명과 죽음', '성장 이야기', '우정과 동료애', '역동적인', '불평등', '젠더 문제', '전쟁과 평화', '어두운', '긴장감 있는', '감동적인', '잔잔한', '밝고 긍정적', '정체성 탐색']
+[2025-04-10T00:51:47.998+0000] {logging_mixin.py:188} INFO - 흰 오목눈이
+[2025-04-10T00:51:48.193+0000] {logging_mixin.py:188} INFO - 
+ User ID: 24
+[2025-04-10T00:51:48.197+0000] {logging_mixin.py:188} INFO -  Books in Nest: [(13383, '다크 타워 4 (상)'), (51320, 'GEN Z 인문학'), (14202, '우리가 이토록 작고 외롭지 않다면'), (39912, '밀림의 연인들')]
+[2025-04-10T00:51:48.198+0000] {logging_mixin.py:188} INFO -  Tags: ['판타지', 'SF', '모험', '긴장감 있는', '어두운', '불안감을 조성하는', '사회 비판적', '인공지능과 정보화', '문화 충돌', '성장 이야기', '젠더 문제', '감동적인', '밝고 긍정적', '스릴러', '불평등']
+[2025-04-10T00:51:48.198+0000] {logging_mixin.py:188} INFO - 독수리
+[2025-04-10T00:51:48.336+0000] {logging_mixin.py:188} INFO - 
+ User ID: 31
+[2025-04-10T00:51:48.337+0000] {logging_mixin.py:188} INFO -  Books in Nest: [(26336, '스트라이크 더 블러드 APPEND 2'), (25486, 'DOGS BULLETS & CARNAGE (독스) 5')]
+[2025-04-10T00:51:48.337+0000] {logging_mixin.py:188} INFO -  Tags: ['판타지', '스릴러', '긴장감 있는', '가상 현실', '잔혹한', 'SF', '어두운', '미지의 영역 탐험']
+[2025-04-10T00:51:48.338+0000] {logging_mixin.py:188} INFO - 까마귀
+[2025-04-10T00:51:48.372+0000] {logging_mixin.py:188} INFO -  모든 유저의 아키타입이 성공적으로 업데이트되었습니다.
+[2025-04-10T00:51:48.386+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-10T00:51:48.400+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=update_archetypes_daily, task_id=assign_archetypes_task, execution_date=20250410T005014, start_date=20250410T005147, end_date=20250410T005148
+[2025-04-10T00:51:48.427+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-10T00:51:48.444+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

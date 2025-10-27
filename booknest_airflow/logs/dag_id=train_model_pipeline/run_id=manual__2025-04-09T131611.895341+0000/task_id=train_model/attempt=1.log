@@ -1,0 +1,31 @@
+[2025-04-09T13:16:42.443+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.train_model manual__2025-04-09T13:16:11.895341+00:00 [queued]>
+[2025-04-09T13:16:42.450+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.train_model manual__2025-04-09T13:16:11.895341+00:00 [queued]>
+[2025-04-09T13:16:42.450+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-09T13:16:42.461+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): train_model> on 2025-04-09 13:16:11.895341+00:00
+[2025-04-09T13:16:42.469+0000] {standard_task_runner.py:60} INFO - Started process 37141 to run task
+[2025-04-09T13:16:42.472+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'train_model', 'manual__2025-04-09T13:16:11.895341+00:00', '--job-id', '660', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmpeny07os8']
+[2025-04-09T13:16:42.473+0000] {standard_task_runner.py:88} INFO - Job 660: Subtask train_model
+[2025-04-09T13:16:42.514+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.train_model manual__2025-04-09T13:16:11.895341+00:00 [running]> on host c6a1082d0e89
+[2025-04-09T13:16:42.577+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='booknest' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-04-09T13:16:11.895341+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-09T13:16:11.895341+00:00'
+[2025-04-09T13:16:42.579+0000] {logging_mixin.py:188} INFO - [train_model] 학습용 행렬 로드 중...
+[2025-04-09T13:16:42.589+0000] {logging_mixin.py:188} INFO - [train_model] user 수: 16, item 수: 1
+[2025-04-09T13:16:42.589+0000] {logging_mixin.py:188} INFO - [train_model] interactions shape: (16, 1), nnz: 2
+[2025-04-09T13:16:42.590+0000] {logging_mixin.py:188} INFO - [train_model] 모델 학습 시작...
+[2025-04-09T13:16:42.605+0000] {logging_mixin.py:188} INFO - [model_utils] 모델 학습 완료
+[2025-04-09T13:16:42.606+0000] {logging_mixin.py:188} INFO - 26320
+[2025-04-09T13:16:42.607+0000] {logging_mixin.py:188} INFO - [train_model] user 0 vs 1 벡터 차이: 0.07008187
+[2025-04-09T13:16:42.607+0000] {logging_mixin.py:188} INFO - [train_model] Precision@5 평가 중...
+[2025-04-09T13:16:42.607+0000] {logging_mixin.py:188} INFO - [model_utils] 평가용 상호작용 행렬 shape: (16, 1), nnz: 2
+[2025-04-09T13:16:42.610+0000] {logging_mixin.py:188} INFO - [model_utils] Precision@5: 0.2000
+[2025-04-09T13:16:42.611+0000] {logging_mixin.py:188} INFO - [model_utils] Recall@5: 1.0000
+[2025-04-09T13:16:42.611+0000] {logging_mixin.py:188} INFO - [model_utils] AUC: nan
+[2025-04-09T13:16:42.628+0000] {logging_mixin.py:188} INFO - [model_utils] 모델 저장 완료: data/model/lightfm_model.pkl
+[2025-04-09T13:16:42.629+0000] {logging_mixin.py:188} INFO - [train_model] 모델 로컬 저장 경로: data/model/lightfm_model.pkl
+[2025-04-09T13:16:42.629+0000] {logging_mixin.py:188} INFO - [train_model] 현재 작업 디렉토리: /opt/***
+[2025-04-09T13:16:42.920+0000] {logging_mixin.py:188} INFO - [s3_utils] S3 연결 성공
+[2025-04-09T13:16:43.721+0000] {logging_mixin.py:188} INFO - [s3_utils] S3 업로드 완료 → s3://saffybooknest/model/lightfm/model_lightfm_20250409.pkl
+[2025-04-09T13:16:43.721+0000] {logging_mixin.py:188} INFO - [train_model] [모델 S3 업로드 완료 → s3://saffybooknest/model/lightfm/model_lightfm_20250409.pkl
+[2025-04-09T13:16:43.723+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-09T13:16:43.730+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=train_model_pipeline, task_id=train_model, execution_date=20250409T131611, start_date=20250409T131642, end_date=20250409T131643
+[2025-04-09T13:16:43.770+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-09T13:16:43.786+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

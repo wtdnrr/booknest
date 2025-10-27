@@ -1,0 +1,31 @@
+[2025-04-11T00:25:49.253+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.train_model manual__2025-04-11T00:25:04.182449+00:00 [queued]>
+[2025-04-11T00:25:49.259+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.train_model manual__2025-04-11T00:25:04.182449+00:00 [queued]>
+[2025-04-11T00:25:49.260+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-11T00:25:49.273+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): train_model> on 2025-04-11 00:25:04.182449+00:00
+[2025-04-11T00:25:49.283+0000] {standard_task_runner.py:60} INFO - Started process 16605 to run task
+[2025-04-11T00:25:49.286+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'train_model', 'manual__2025-04-11T00:25:04.182449+00:00', '--job-id', '708', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmpmq78x956']
+[2025-04-11T00:25:49.287+0000] {standard_task_runner.py:88} INFO - Job 708: Subtask train_model
+[2025-04-11T00:25:49.331+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.train_model manual__2025-04-11T00:25:04.182449+00:00 [running]> on host 7ec5ad01cd28
+[2025-04-11T00:25:49.399+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='booknest' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-04-11T00:25:04.182449+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-11T00:25:04.182449+00:00'
+[2025-04-11T00:25:49.401+0000] {logging_mixin.py:188} INFO - [train_model] 학습용 행렬 로드 중...
+[2025-04-11T00:25:49.429+0000] {logging_mixin.py:188} INFO - [train_model] user 수: 24, item 수: 1806
+[2025-04-11T00:25:49.430+0000] {logging_mixin.py:188} INFO - [train_model] interactions shape: (24, 1806), nnz: 1806
+[2025-04-11T00:25:49.431+0000] {logging_mixin.py:188} INFO - [train_model] 모델 학습 시작...
+[2025-04-11T00:25:49.512+0000] {logging_mixin.py:188} INFO - [model_utils] 모델 학습 완료
+[2025-04-11T00:25:49.513+0000] {logging_mixin.py:188} INFO - 47474
+[2025-04-11T00:25:49.514+0000] {logging_mixin.py:188} INFO - [train_model] user 0 vs 1 벡터 차이: 433.141
+[2025-04-11T00:25:49.514+0000] {logging_mixin.py:188} INFO - [train_model] Precision@5 평가 중...
+[2025-04-11T00:25:49.515+0000] {logging_mixin.py:188} INFO - [model_utils] 평가용 상호작용 행렬 shape: (24, 1806), nnz: 1806
+[2025-04-11T00:25:49.532+0000] {logging_mixin.py:188} INFO - [model_utils] Precision@5: 0.0091
+[2025-04-11T00:25:49.532+0000] {logging_mixin.py:188} INFO - [model_utils] Recall@5: 0.0152
+[2025-04-11T00:25:49.533+0000] {logging_mixin.py:188} INFO - [model_utils] AUC: 0.5185
+[2025-04-11T00:25:49.576+0000] {logging_mixin.py:188} INFO - [model_utils] 모델 저장 완료: data/model/lightfm_model.pkl
+[2025-04-11T00:25:49.577+0000] {logging_mixin.py:188} INFO - [train_model] 모델 로컬 저장 경로: data/model/lightfm_model.pkl
+[2025-04-11T00:25:49.578+0000] {logging_mixin.py:188} INFO - [train_model] 현재 작업 디렉토리: /opt/***
+[2025-04-11T00:25:49.897+0000] {logging_mixin.py:188} INFO - [s3_utils] S3 연결 성공
+[2025-04-11T00:25:52.894+0000] {logging_mixin.py:188} INFO - [s3_utils] S3 업로드 완료 → s3://saffybooknest/model/lightfm/model_lightfm_20250411.pkl
+[2025-04-11T00:25:52.895+0000] {logging_mixin.py:188} INFO - [train_model] [모델 S3 업로드 완료 → s3://saffybooknest/model/lightfm/model_lightfm_20250411.pkl
+[2025-04-11T00:25:52.899+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-11T00:25:52.908+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=train_model_pipeline, task_id=train_model, execution_date=20250411T002504, start_date=20250411T002549, end_date=20250411T002552
+[2025-04-11T00:25:52.961+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-11T00:25:52.976+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

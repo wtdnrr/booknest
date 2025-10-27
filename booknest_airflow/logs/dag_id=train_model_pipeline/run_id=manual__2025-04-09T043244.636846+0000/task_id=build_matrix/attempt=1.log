@@ -1,0 +1,17 @@
+[2025-04-09T04:33:10.359+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-09T04:32:44.636846+00:00 [queued]>
+[2025-04-09T04:33:10.365+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-09T04:32:44.636846+00:00 [queued]>
+[2025-04-09T04:33:10.366+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-09T04:33:10.379+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): build_matrix> on 2025-04-09 04:32:44.636846+00:00
+[2025-04-09T04:33:10.388+0000] {standard_task_runner.py:60} INFO - Started process 30579 to run task
+[2025-04-09T04:33:10.390+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'build_matrix', 'manual__2025-04-09T04:32:44.636846+00:00', '--job-id', '652', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmpsftlrkii']
+[2025-04-09T04:33:10.392+0000] {standard_task_runner.py:88} INFO - Job 652: Subtask build_matrix
+[2025-04-09T04:33:10.429+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.build_matrix manual__2025-04-09T04:32:44.636846+00:00 [running]> on host c6a1082d0e89
+[2025-04-09T04:33:10.489+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='booknest' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='build_matrix' AIRFLOW_CTX_EXECUTION_DATE='2025-04-09T04:32:44.636846+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-09T04:32:44.636846+00:00'
+[2025-04-09T04:33:10.491+0000] {logging_mixin.py:188} INFO - [build_matrix] 데이터 로딩 중...
+[2025-04-09T04:33:10.575+0000] {logging_mixin.py:188} INFO - [build_matrix] 피처 전처리 중...
+[2025-04-09T04:33:11.959+0000] {logging_mixin.py:188} INFO - [build_matrix] 행렬 생성 중...
+[2025-04-09T04:33:11.967+0000] {logging_mixin.py:188} INFO - [matrix_builder] 유효한 상호작용 수: 0
+[2025-04-09T04:33:12.034+0000] {logging_mixin.py:188} INFO - [matrix_builder] 오류 발생: Found array with 0 sample(s) (shape=(0, 26319)) while a minimum of 1 is required by the normalize function.
+[2025-04-09T04:33:12.036+0000] {logging_mixin.py:188} INFO - [build_matrix] 오류 발생: 행렬 생성 실패
+[2025-04-09T04:33:12.091+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-09T04:33:12.112+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

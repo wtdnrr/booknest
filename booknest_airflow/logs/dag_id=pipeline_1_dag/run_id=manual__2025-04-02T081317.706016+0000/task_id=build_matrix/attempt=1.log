@@ -1,0 +1,19 @@
+[2025-04-02T08:13:21.418+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_1_dag.build_matrix manual__2025-04-02T08:13:17.706016+00:00 [queued]>
+[2025-04-02T08:13:21.424+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_1_dag.build_matrix manual__2025-04-02T08:13:17.706016+00:00 [queued]>
+[2025-04-02T08:13:21.425+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-02T08:13:21.436+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): build_matrix> on 2025-04-02 08:13:17.706016+00:00
+[2025-04-02T08:13:21.444+0000] {standard_task_runner.py:60} INFO - Started process 4232 to run task
+[2025-04-02T08:13:21.447+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_1_dag', 'build_matrix', 'manual__2025-04-02T08:13:17.706016+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_1_dag.py', '--cfg-path', '/tmp/tmpl__8tt20']
+[2025-04-02T08:13:21.448+0000] {standard_task_runner.py:88} INFO - Job 43: Subtask build_matrix
+[2025-04-02T08:13:21.487+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_1_dag.build_matrix manual__2025-04-02T08:13:17.706016+00:00 [running]> on host 70eb00e5d734
+[2025-04-02T08:13:21.547+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_1_dag' AIRFLOW_CTX_TASK_ID='build_matrix' AIRFLOW_CTX_EXECUTION_DATE='2025-04-02T08:13:17.706016+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-02T08:13:17.706016+00:00'
+[2025-04-02T08:13:21.548+0000] {logging_mixin.py:188} INFO - [1] 데이터 불러오는 중...
+[2025-04-02T08:13:21.582+0000] {logging_mixin.py:188} INFO - book_df / log_df 로딩 완료
+[2025-04-02T08:13:21.586+0000] {logging_mixin.py:188} INFO - [2] 가중치 계산 완료 (남은 로그 수: 3)
+[2025-04-02T08:13:21.588+0000] {logging_mixin.py:188} INFO - [3] 피처 리스트 생성 완료
+[2025-04-02T08:13:21.593+0000] {logging_mixin.py:188} INFO - [4] 행렬 및 매핑 생성 완료
+[2025-04-02T08:13:21.594+0000] {logging_mixin.py:188} INFO - [5] 행렬 + 매핑 저장 완료 → data/processed/matrix.pkl
+[2025-04-02T08:13:21.594+0000] {logging_mixin.py:188} INFO - S3 업로드 실패: 'AWS_ACCESS_KEY_ID'
+[2025-04-02T08:13:21.595+0000] {logging_mixin.py:188} INFO - 오류 발생: 'AWS_ACCESS_KEY_ID'
+[2025-04-02T08:13:21.620+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-02T08:13:21.638+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

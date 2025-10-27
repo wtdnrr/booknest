@@ -1,0 +1,14 @@
+[2025-04-03T04:22:30.717+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: update_model_daily.update_model scheduled__2024-01-31T00:00:00+00:00 [queued]>
+[2025-04-03T04:22:30.723+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: update_model_daily.update_model scheduled__2024-01-31T00:00:00+00:00 [queued]>
+[2025-04-03T04:22:30.723+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-03T04:22:30.733+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): update_model> on 2024-01-31 00:00:00+00:00
+[2025-04-03T04:22:30.740+0000] {standard_task_runner.py:60} INFO - Started process 751 to run task
+[2025-04-03T04:22:30.743+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'update_model_daily', 'update_model', 'scheduled__2024-01-31T00:00:00+00:00', '--job-id', '118', '--raw', '--subdir', 'DAGS_FOLDER/update_model_dag.py', '--cfg-path', '/tmp/tmph0kkagj1']
+[2025-04-03T04:22:30.744+0000] {standard_task_runner.py:88} INFO - Job 118: Subtask update_model
+[2025-04-03T04:22:30.784+0000] {task_command.py:423} INFO - Running <TaskInstance: update_model_daily.update_model scheduled__2024-01-31T00:00:00+00:00 [running]> on host 81ce5c00f42d
+[2025-04-03T04:22:30.839+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='update_model_daily' AIRFLOW_CTX_TASK_ID='update_model' AIRFLOW_CTX_EXECUTION_DATE='2024-01-31T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-01-31T00:00:00+00:00'
+[2025-04-03T04:22:30.841+0000] {logging_mixin.py:188} INFO - [update_model] S3에서 전날 matrix.pkl 다운로드 중...
+[2025-04-03T04:22:30.955+0000] {logging_mixin.py:188} INFO - [s3_utils] 다운로드 실패: [Errno 2] No such file or directory: 'data/processed/matrix_daily.pkl.F9aF2bFe'
+[2025-04-03T04:22:30.956+0000] {logging_mixin.py:188} INFO - [update_model] 오류 발생: [Errno 2] No such file or directory: 'data/processed/matrix_daily.pkl.F9aF2bFe'
+[2025-04-03T04:22:30.997+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-03T04:22:31.027+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

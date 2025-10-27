@@ -1,0 +1,45 @@
+[2025-04-07T06:55:27.558+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: update_archetypes_daily.assign_archetypes_task manual__2025-04-07T06:55:26.571934+00:00 [queued]>
+[2025-04-07T06:55:27.565+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: update_archetypes_daily.assign_archetypes_task manual__2025-04-07T06:55:26.571934+00:00 [queued]>
+[2025-04-07T06:55:27.566+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-04-07T06:55:27.579+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): assign_archetypes_task> on 2025-04-07 06:55:26.571934+00:00
+[2025-04-07T06:55:27.585+0000] {standard_task_runner.py:60} INFO - Started process 926 to run task
+[2025-04-07T06:55:27.588+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'update_archetypes_daily', 'assign_archetypes_task', 'manual__2025-04-07T06:55:26.571934+00:00', '--job-id', '503', '--raw', '--subdir', 'DAGS_FOLDER/update_archetype_daily.py', '--cfg-path', '/tmp/tmprd4n_391']
+[2025-04-07T06:55:27.590+0000] {standard_task_runner.py:88} INFO - Job 503: Subtask assign_archetypes_task
+[2025-04-07T06:55:27.632+0000] {task_command.py:423} INFO - Running <TaskInstance: update_archetypes_daily.assign_archetypes_task manual__2025-04-07T06:55:26.571934+00:00 [running]> on host c6a1082d0e89
+[2025-04-07T06:55:27.693+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='booknest' AIRFLOW_CTX_DAG_ID='update_archetypes_daily' AIRFLOW_CTX_TASK_ID='assign_archetypes_task' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T06:55:26.571934+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T06:55:26.571934+00:00'
+[2025-04-07T06:55:27.703+0000] {logging_mixin.py:188} INFO - [db_utils] DB 연결 성공
+[2025-04-07T06:55:27.878+0000] {logging_mixin.py:188} INFO - 
+📚 User ID: 1
+[2025-04-07T06:55:27.879+0000] {logging_mixin.py:188} INFO - 📖 Books in Nest: [(2, '한국의 건강불평등 지표와 정책과제'), (3, '고독한 심리 방에 입장하셨습니다'), (28, '만화로 배우는 와인의 역사'), (779, '다시, 케인스'), (204, '궁통보감 강해'), (8, '교사와 부모를 위한 긍정 훈육')]
+[2025-04-07T06:55:27.880+0000] {logging_mixin.py:188} INFO - 🏷 Tags: ['내면 탐구', '트라우마와 치유', '밝고 긍정적', '정체성 탐색', '성장 이야기', '황홀한', '불안감을 조성하는', '사회 비판적', '불평등', '철학적', '환경과 생태', '전통과 혁신', '독특한 서술 방식', '감동적인']
+[2025-04-07T06:55:27.880+0000] {logging_mixin.py:188} INFO - 현실주의자
+[2025-04-07T06:55:27.945+0000] {logging_mixin.py:188} INFO - 
+📚 User ID: 3
+[2025-04-07T06:55:27.945+0000] {logging_mixin.py:188} INFO - 📖 Books in Nest: [(28, '만화로 배우는 와인의 역사'), (685, '카구야 님은 고백 받고 싶어 12'), (34, '1일 1수, 대학에서 인생의 한 수를 배우다'), (392, '미팅에 나갔는데 여자가 없었던 이야기 4'), (162, '악역 영애 레벨 99 (5)'), (251, '저, 능력은 평균치로 해달라고 말했잖아요! 5'), (170, '외모에는 반드시 그 사람의 심리가 드러나게 되어 있다'), (972, '명탐정 코난 아무로 토오루 셀렉션'), (98, '다니엘서'), (886, '안녕하세요'), (999, '성학십도, 자기 구원의 가이드맵')]
+[2025-04-07T06:55:27.946+0000] {logging_mixin.py:188} INFO - 🏷 Tags: ['황홀한', '불안감을 조성하는', '사회 비판적', '불평등', '철학적', '감동적인', '잔잔한', '판타지', '코미디', '역동적인', '모험', '우정과 동료애', '밝고 긍정적', '내면 탐구', '스릴러', '긴장감 있는', '드라마', '우울한', '어두운', '정체성 탐색', '도덕적 딜레마', '종교적·영적 요소', '성장 이야기']
+[2025-04-07T06:55:27.946+0000] {logging_mixin.py:188} INFO - 현실주의자
+[2025-04-07T06:55:28.023+0000] {logging_mixin.py:188} INFO - 
+📚 User ID: 6
+[2025-04-07T06:55:28.024+0000] {logging_mixin.py:188} INFO - 📖 Books in Nest: [(220, 'Re : 제로부터 시작하는 이세계 생활 단편집 8'), (814, '카구야 님을 이야기하고 싶어 2'), (392, '미팅에 나갔는데 여자가 없었던 이야기 4'), (144, '코믹 전생했더니 슬라임이었던 건에 대하여 7'), (532, '슬라임을 잡으면서 300년, 모르는 사이에 레벨MAX가 되었습니다 8'), (533, '전생했더니 슬라임이었던 건에 대하여 18'), (90, '야쿠자의 덕질 1')]
+[2025-04-07T06:55:28.025+0000] {logging_mixin.py:188} INFO - 🏷 Tags: ['판타지', '모험', '우정과 동료애', '코미디', '유머러스한', '로맨스', '긴장감 있는', '어두운', '사회 비판적', '밝고 긍정적', '성장 이야기', '이세계', '정체성 탐색']
+[2025-04-07T06:55:28.025+0000] {logging_mixin.py:188} INFO - 명랑한 이야기꾼
+[2025-04-07T06:55:28.084+0000] {logging_mixin.py:188} INFO - 
+📚 User ID: 8
+[2025-04-07T06:55:28.085+0000] {logging_mixin.py:188} INFO - 📖 Books in Nest: [(431, '탄소중립 ESG Management Guide'), (355, '어쩌면 너의 이야기'), (209, '나는 일그러진 사랑과 이별하기로 했다'), (963, '일회용 아내'), (3, '고독한 심리 방에 입장하셨습니다'), (653, '사랑은 세계정복 후에 3')]
+[2025-04-07T06:55:28.085+0000] {logging_mixin.py:188} INFO - 🏷 Tags: ['철학적', '사회 비판적', '환경과 생태', '잔잔한', '젠더 문제', '잔혹한', '어두운', '불안감을 조성하는', 'SF', '스릴러', '긴장감 있는', '정체성 탐색', '불평등', '금기와 반항', '내면 탐구', '트라우마와 치유', '밝고 긍정적', '성장 이야기']
+[2025-04-07T06:55:28.086+0000] {logging_mixin.py:188} INFO - 현실주의자
+[2025-04-07T06:55:28.146+0000] {logging_mixin.py:188} INFO - 
+📚 User ID: 10
+[2025-04-07T06:55:28.146+0000] {logging_mixin.py:188} INFO - 📖 Books in Nest: [(1, '쥐덫'), (8, '교사와 부모를 위한 긍정 훈육')]
+[2025-04-07T06:55:28.147+0000] {logging_mixin.py:188} INFO - 🏷 Tags: ['미스터리', '스릴러', '공포', '긴장감 있는', '어두운', '감동적인', '밝고 긍정적', '성장 이야기', '트라우마와 치유']
+[2025-04-07T06:55:28.147+0000] {logging_mixin.py:188} INFO - 냉철한 분석가
+[2025-04-07T06:55:28.193+0000] {logging_mixin.py:188} INFO - 
+📚 User ID: 11
+[2025-04-07T06:55:28.193+0000] {logging_mixin.py:188} INFO - 📖 Books in Nest: [(98, '다니엘서'), (8, '교사와 부모를 위한 긍정 훈육')]
+[2025-04-07T06:55:28.194+0000] {logging_mixin.py:188} INFO - 🏷 Tags: ['감동적인', '밝고 긍정적', '성장 이야기', '트라우마와 치유']
+[2025-04-07T06:55:28.194+0000] {logging_mixin.py:188} INFO - 따뜻한 감성가
+[2025-04-07T06:55:28.224+0000] {logging_mixin.py:188} INFO - ✅ 모든 유저의 아키타입이 성공적으로 업데이트되었습니다.
+[2025-04-07T06:55:28.236+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-07T06:55:28.243+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=update_archetypes_daily, task_id=assign_archetypes_task, execution_date=20250407T065526, start_date=20250407T065527, end_date=20250407T065528
+[2025-04-07T06:55:28.282+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-07T06:55:28.296+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

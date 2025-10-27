@@ -1,0 +1,30 @@
+[2025-04-02T04:44:26.518+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_1_dag.train_model manual__2025-04-02T04:44:20.518770+00:00 [queued]>
+[2025-04-02T04:44:26.528+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_1_dag.train_model manual__2025-04-02T04:44:20.518770+00:00 [queued]>
+[2025-04-02T04:44:26.529+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-02T04:44:26.544+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): train_model> on 2025-04-02 04:44:20.518770+00:00
+[2025-04-02T04:44:26.553+0000] {standard_task_runner.py:60} INFO - Started process 524 to run task
+[2025-04-02T04:44:26.556+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_1_dag', 'train_model', 'manual__2025-04-02T04:44:20.518770+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_1_dag.py', '--cfg-path', '/tmp/tmpkhwi5qj7']
+[2025-04-02T04:44:26.558+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask train_model
+[2025-04-02T04:44:26.603+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_1_dag.train_model manual__2025-04-02T04:44:20.518770+00:00 [running]> on host 70eb00e5d734
+[2025-04-02T04:44:26.670+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_1_dag' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-04-02T04:44:20.518770+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-02T04:44:20.518770+00:00'
+[2025-04-02T04:44:26.676+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/src/train_model.py", line 20, in run
+    model.fit(train, item_features=item_features, sample_weight=weights, epochs=10, num_threads=4)
+  File "/home/airflow/.local/lib/python3.8/site-packages/lightfm/lightfm.py", line 550, in fit
+    return self.fit_partial(
+  File "/home/airflow/.local/lib/python3.8/site-packages/lightfm/lightfm.py", line 622, in fit_partial
+    sample_weight_data = self._process_sample_weight(interactions, sample_weight)
+  File "/home/airflow/.local/lib/python3.8/site-packages/lightfm/lightfm.py", line 402, in _process_sample_weight
+    raise ValueError(
+ValueError: Sample weight and interaction matrix entries must be in the same order
+[2025-04-02T04:44:26.687+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=pipeline_1_dag, task_id=train_model, execution_date=20250402T044420, start_date=20250402T044426, end_date=20250402T044426
+[2025-04-02T04:44:26.696+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 10 for task train_model (Sample weight and interaction matrix entries must be in the same order; 524)
+[2025-04-02T04:44:26.729+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-02T04:44:26.748+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,17 @@
+[2025-04-07T07:45:33.920+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-07T07:45:29.377443+00:00 [queued]>
+[2025-04-07T07:45:33.928+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-07T07:45:29.377443+00:00 [queued]>
+[2025-04-07T07:45:33.928+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-07T07:45:33.939+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): build_matrix> on 2025-04-07 07:45:29.377443+00:00
+[2025-04-07T07:45:33.946+0000] {standard_task_runner.py:60} INFO - Started process 1915 to run task
+[2025-04-07T07:45:33.948+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'build_matrix', 'manual__2025-04-07T07:45:29.377443+00:00', '--job-id', '516', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmpi4b4agea']
+[2025-04-07T07:45:33.949+0000] {standard_task_runner.py:88} INFO - Job 516: Subtask build_matrix
+[2025-04-07T07:45:33.985+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.build_matrix manual__2025-04-07T07:45:29.377443+00:00 [running]> on host c6a1082d0e89
+[2025-04-07T07:45:34.043+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='build_matrix' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T07:45:29.377443+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T07:45:29.377443+00:00'
+[2025-04-07T07:45:34.044+0000] {logging_mixin.py:188} INFO - [build_matrix] 데이터 로딩 중...
+[2025-04-07T07:45:34.076+0000] {logging_mixin.py:188} INFO - [build_matrix] 피처 전처리 중...
+[2025-04-07T07:45:34.088+0000] {logging_mixin.py:188} INFO - [build_matrix] 행렬 및 매핑 생성 중...
+[2025-04-07T07:45:34.095+0000] {logging_mixin.py:188} INFO - [matrix_builder] 상호작용 수: 940
+[2025-04-07T07:45:34.097+0000] {logging_mixin.py:188} INFO - [matrix_builder] 오류: Item id 3850 not in item id mapping. Make sure you call the fit method.
+[2025-04-07T07:45:34.098+0000] {logging_mixin.py:188} INFO - [build_matrix] 오류 발생: not enough values to unpack (expected 6, got 0)
+[2025-04-07T07:45:34.121+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-07T07:45:34.140+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,16 @@
+[2025-04-03T05:36:34.615+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-03T05:36:30.567391+00:00 [queued]>
+[2025-04-03T05:36:34.621+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_pipeline.build_matrix manual__2025-04-03T05:36:30.567391+00:00 [queued]>
+[2025-04-03T05:36:34.621+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-03T05:36:34.631+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): build_matrix> on 2025-04-03 05:36:30.567391+00:00
+[2025-04-03T05:36:34.638+0000] {standard_task_runner.py:60} INFO - Started process 248 to run task
+[2025-04-03T05:36:34.641+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'train_model_pipeline', 'build_matrix', 'manual__2025-04-03T05:36:30.567391+00:00', '--job-id', '252', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmpb_krbj68']
+[2025-04-03T05:36:34.642+0000] {standard_task_runner.py:88} INFO - Job 252: Subtask build_matrix
+[2025-04-03T05:36:34.685+0000] {task_command.py:423} INFO - Running <TaskInstance: train_model_pipeline.build_matrix manual__2025-04-03T05:36:30.567391+00:00 [running]> on host b3cf11128f5a
+[2025-04-03T05:36:34.745+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_model_pipeline' AIRFLOW_CTX_TASK_ID='build_matrix' AIRFLOW_CTX_EXECUTION_DATE='2025-04-03T05:36:30.567391+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-03T05:36:30.567391+00:00'
+[2025-04-03T05:36:34.747+0000] {logging_mixin.py:188} INFO - [build_matrix] 데이터 로딩 중...
+[2025-04-03T05:36:34.782+0000] {logging_mixin.py:188} INFO - [build_matrix] 피처 전처리 중...
+[2025-04-03T05:36:34.785+0000] {logging_mixin.py:188} INFO - [build_matrix] 행렬 및 매핑 생성 중...
+[2025-04-03T05:36:34.787+0000] {logging_mixin.py:188} INFO - [matrix_builder] 상호작용 수: 3
+[2025-04-03T05:36:34.791+0000] {logging_mixin.py:188} INFO - [build_matrix] 오류 발생: 'str' object has no attribute 'tocoo'
+[2025-04-03T05:36:34.814+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-03T05:36:34.835+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
